@@ -1,0 +1,19 @@
+<div class="container">
+<%- include("partials/header.ejs") %>
+
+<div class="main">
+   
+<% if (locals.blogArray && locals.blogArray.length > 0) { %>
+    <H4>Blogs</H4>
+    <% blogArray.forEach(function(blog,index){ %>
+    <ul>
+        <li><a href="/blog/<%= index %>"><%=blogTitle[index]%></a></li>
+    </ul>
+   
+   
+   <% }); %>
+   <% } else { %>
+    <h2>Write your first Blog   </h2>
+<a id="homeButton" href="/add">Add a Blog   </a>
+<% } %> </div>
+</div>

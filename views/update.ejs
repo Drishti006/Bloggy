@@ -1,0 +1,178 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: 100%; 
+    
+}
+nav{
+    padding: 5px 5px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+nav logo{
+    font-weight: bold;
+}
+main{
+    padding: 10px;
+}
+main a{
+    float: right;
+    text-decoration: none;
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+
+    padding: 1px 3px;
+}
+main a:hover{
+    background-color: black;
+    transform: scale(1.002);
+    border: 1px solid white;
+    color: white;
+    font-weight: 400;
+}
+.container{
+    position: relative;
+    height: 100%;
+}
+button{
+    color: blue;
+}
+.main{
+    padding: 50px;
+}
+.main a{
+    padding: 5px 10px;
+    color: black;
+}
+#homeButton{
+    border: 1px solid black;
+    color:white;
+    background-color: black;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#createPage{
+    margin: 50px;
+    display: grid;
+    grid: 1;
+    width: 50%;
+    grid-gap: 20px;
+}
+#createPage input, textarea{
+    border: 1px solid black;
+    padding: 10px;
+}
+#createPage textarea{
+    height: 70px;
+}
+#createPage textarea:hover{
+    border: 1px solid gray;
+}
+#createPage input:hover{
+    border: 1px solid gray;
+}
+#createPage button{
+    background-color: black;
+    color: white;
+    height: 35px;
+    font-size: medium;
+    cursor: pointer;
+}
+#createPage button:hover{
+    background-color: rgb(27, 27, 27);
+}
+.main{
+    grid:1;
+    width: 30%;
+
+}
+#indexButton{
+    height: 3px;
+}
+.section{
+   padding: 5px 20px;
+   margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.section h2{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.section h4{
+    padding-top: 0;
+    margin-top: 0;
+}
+#indexButton{
+    font-size: 12px;
+    flex-direction: column;
+    margin-right: 5px;
+}
+#listOfButtons{
+    display: flex;
+}
+@media (max-width: 768px) {
+    nav {width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    nav logo {
+     margin-left: 0;
+    }
+
+    main a {
+        float: right;
+        text-align: center;
+       
+    }
+
+    #createPage {
+        width: 80%;
+    }
+
+    .main {
+        width: 100%;
+        padding: 20px;
+    }
+    #listOfButtons {
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+    nav {width: 100%;
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+
+    #createPage {
+        grid-template-columns: 1fr; 
+        width: 80%; 
+    }
+
+    .section {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+</style>
+<%- include("partials/header.ejs") %>
+
+<form id="createPage" action="/updated/<%= updatedIndex %>" method="Post">
+    <input type="text" name="updatedTitle" placeholder="Enter your blog Title" required value="<%= updateTitle %>"></input>
+    <textarea name="updatedBlog" id="blog" placeholder="Write your blog" required><%= updateBlog %></textarea>
+    <button type="submit">Update</button>
+</form>
+
+

@@ -1,0 +1,8 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+<form id="createPage" action="/created" method="Post">
+    <input type="text" name="title" placeholder="Enter your blog Title" required>
+    <textarea name="blog" id="blog" placeholder="Write your blog" required></textarea>
+    <button type="submit">Create</button>
+</form>
+
